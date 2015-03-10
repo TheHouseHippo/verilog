@@ -81,7 +81,9 @@ endmodule
 
 
 //////// 7-Seg Hex Display Modules ///////////////
-module hexdisp_one_2(s, leds);
+module hexdisp_one_2(s, leds); 
+// this module drives a 7-segment display, leds
+// to display a 3-bit input, s
 	input [2:0] s;
 	output reg [0:6] leds;
 	
@@ -202,6 +204,7 @@ module hexdisp_two_2(num, hexd1, hexd2);
 endmodule
 
 module hexturnoff (hex6, hex2);
+// drives a 7-segment display off
 	output [0:6] hex6;
 	output [0:6] hex2;
 	
@@ -213,6 +216,7 @@ endmodule
 
 /////Register Modules//////////////////
 module reg3_2(D, Clock, Resetn, Q);
+// Standard FlipFlop with asynchronous reset
 	input [2:0] D;
 	input Clock, Resetn;
 	output reg [2:0] Q;
@@ -272,10 +276,10 @@ module alu3_add_sub(x, y, op, Clock, Resetn, leds1, ledsp, leds2, leds3, hexd1, 
 	reg3_2(x, Clock, Resetn, q1);
 	reg3_2(y, Clock, Resetn, q2);
 	
-	//Set up pre-op display
+	//Set up pre-op display    // NTS:
 	hexdisp_one_2(q1, leds1);  // These  are In order 
 	hexdisp_op(op, ledsp);     // from left to right 
-	hexdisp_one_2(q2, leds2);  // for assigning 7-segs
+	hexdisp_one_2(q2, leds2);  // for pin-assignments
 	hexdisp_eq_2(leds3);
 	
 	//Perform Operation and display
