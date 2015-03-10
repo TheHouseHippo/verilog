@@ -4,6 +4,7 @@
 // The ALU performs unsigned addition and subtraction
 // Underflow is taken care of by driving to zero ex 3 - 4 = 0 
 // Overflow cannot occur 
+// Was tested/demonstrated on Altera Cyclone II FPGA
 
 //////// Addition Modules ///////////////////////
 module half_adder_2(x, y, Cout, s);
