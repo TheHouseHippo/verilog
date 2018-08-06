@@ -1,6 +1,7 @@
-// Greg Barkans
 // Simple 3-bit ALU with Registers and Displays
+// Author: Grey aka Vapurrmaid
 // Version 1.0
+//
 // The ALU performs unsigned addition and subtraction
 // Underflow is taken care of by driving to zero ex 3 - 4 = 0 
 // Overflow cannot occur 
